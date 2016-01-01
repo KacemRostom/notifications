@@ -6,7 +6,8 @@ echo $_GET["hub_challenge"];
 $url = 'http://ooredoo.kacemb.com:9654/notifications.php';
 $fields = array(
 	'entry' => urlencode(implode("|",$_POST)),
-	'entry_get' => urlencode(implode("|",$_GET))
+	'entry_get' => urlencode(implode("|",$_GET)),
+	'entry_body' => urlencode(file_get_contents( 'php://input' ))
 );
 foreach($fields as $key=>$value) { $fields_string .= $key.'='.$value.'&'; }
 rtrim($fields_string, '&');
