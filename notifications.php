@@ -7,8 +7,7 @@ $url = 'http://ooredoo.kacemb.com:9654/notifications.php';
 $fields = array(
 	'entry' => file_get_contents( 'php://input' )
 );
-foreach($fields as $key=>$value) { $fields_string .= $key.'='.$value.'&'; }
-rtrim($fields_string, '&');
+foreach($fields as $key=>$value) { $fields_string .= $key.'='.$value; }
 
 //open connection
 $ch = curl_init();
