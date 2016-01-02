@@ -3,7 +3,7 @@ echo $_GET["hub_challenge"];
 
 $url = 'http://ooredoo.kacemb.com:9654/notifications.php';
 
-$entry = json_encode( file_get_contents( 'php://input' ) );
+$entry =  file_get_contents( 'php://input' ) ;
 
 $ch = curl_init();
 
